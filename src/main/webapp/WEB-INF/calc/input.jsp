@@ -11,6 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-
+    <form action="/calc/input" method="get">
+        <input type="number" name="num1">
+        <input type="number" name="num2">
+        <button type="submit">전송</button>
+    </form>
 </body>
 </html>

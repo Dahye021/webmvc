@@ -1,5 +1,5 @@
 package com.ssg.webmvc.calc;
-
+//PRG패턴 (POST-Redirect-GET)
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
