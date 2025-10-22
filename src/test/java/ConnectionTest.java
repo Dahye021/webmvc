@@ -1,3 +1,5 @@
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -11,9 +13,22 @@ public class ConnectionTest {
         Class.forName("com.mysql.cj.jdbc.Driver");
         System.out.println("드라이버 로딩 성공");
 
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db1?serverTimezone=Asia/Seoul", "root", "guswnalswn1");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/db1?serverTimezone=Asia/Seoul&charEncoding=UTF-8", "root", "guswnalswn1");
         Assertions.assertNotNull(conn);
         conn.close();
+    }
 
+    @Test
+    public void testHikariCP() throws Exception {
+        HikariConfig config = new HikariConfig();
+        config.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        config.setJdbcUrl("jdbc:mysql://localhost:3306/db1?serverTimezone=Asia/Seoul&charEncoding=UTF-8");
+        config.setUsername("root");
+        config.setPassword("guswnalswn1");
+        HikariDataSource ds = new HikariDataSource(config);
+        Connection conn = ds.getConnection();
+
+        System.out.println(conn);
+        conn.close();
     }
 }
