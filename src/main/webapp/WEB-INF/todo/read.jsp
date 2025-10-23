@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Todo Read Page</title>
 </head>
 <body>
-
+    ${dto.tno} ${dto.title} ${dto.dueDate} ${dto.finished}
 </body>
 </html>
