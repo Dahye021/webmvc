@@ -13,5 +13,6 @@ public class TodoDAOTest {
     @Test
     public void testTime() throws Exception {
         System.out.println(todoDAO.getTime());
+
     }
 }
