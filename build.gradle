@@ -47,6 +47,8 @@ dependencies {
 
     // https://mvnrepository.com/artifact/jstl/jstl
     implementation 'jstl:jstl:1.2'
+
+    implementation 'org.modelmapper:modelmapper:3.0.0'
 }
 
 test {
