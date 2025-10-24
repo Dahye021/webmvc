@@ -25,7 +25,7 @@
 
 <ul>
     <c:forEach var="dto" items="${dtoList}">
-        <li>${dto}</li>
+        <li><a href ="/todo/read?tno= ${dto.tno}" >${dto}</a></li>
     </c:forEach>
 </ul>
 </body>
